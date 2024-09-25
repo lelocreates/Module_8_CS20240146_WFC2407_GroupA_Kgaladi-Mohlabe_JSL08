@@ -1,18 +1,78 @@
+// Step 1: Create a variable to store the singleton instance
+let bankBranchInstance = null;
+
+// Step 2: Define the BankBranch class
+class BankBranch {
+    constructor(branchInfo) {
+        // Step 3: Check if an instance already exists
+        if (!bankBranchInstance) {
+            this.branchInfo = branchInfo; // Initialize with branch info if no instance exists
+            bankBranchInstance = this; // Store the singleton instance
+        } 
+        // Step 4: Return the existing instance if it already exists
+        return bankBranchInstance;
+    }
+
+    // Step 5: Add a method to retrieve branch information
+    getBranchInfo() {
+        return this.branchInfo;
+    }
+}
+
+// Step 6: Usage example
+const branchA = new BankBranch({ name: "Moneybagsbank", address: "437 cash road" });
+const branchB = new BankBranch({ name: "NotARealBank", address: "344 dipper road" });
+
+console.log(branchA.getBranchInfo()); // Output: { name: 'Main Branch', address: '123 Main St' }
+console.log(branchB.getBranchInfo()); // Output: { name: 'Main Branch', address: '123 Main St' }
+
+// Step 7: Verify that branchA and branchB are the same instance
+console.log(branchA === branchB); // Output: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // This one will be a little tricky. So check out this overview first: https://www.youtube.com/watch?v=sJ-c3BA-Ypo
 
 // 1. Create a variable to store the singleton instance of the bank branch. "bankBranchInstance"
-let bankBranchInstance = []; 
+
 // 2. Define a class called `BankBranch` for managing branch information.
-class BankBranch {
-    constructor(branchInfo){
-        if(bankBranchInstance.instance === null) {
-            this.branchInfo = branchInfo
-            bankBranchInstance.instance = this;
-        }else{
-            return bankBranchInstance;
-        }
-    }
-}
+
 // 3. In the `BankBranch` class:
 //    - Create a constructor that takes `branchInfo` as a parameter.
 //    - Inside the constructor, check if the `bankBranchInstance` variable is null (indicating no instance exists).
