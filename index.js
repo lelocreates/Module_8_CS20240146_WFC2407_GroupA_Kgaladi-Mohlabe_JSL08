@@ -5,7 +5,7 @@ let bankBranchInstance = null;
 class BankBranch {
     constructor(branchInfo) {
         // Step 3: Check if an instance already exists
-        if (!bankBranchInstance) {
+        if (bankBranchInstance === null) {
             this.branchInfo = branchInfo; // Initialize with branch info if no instance exists
             bankBranchInstance = this; // Store the singleton instance
         } 
