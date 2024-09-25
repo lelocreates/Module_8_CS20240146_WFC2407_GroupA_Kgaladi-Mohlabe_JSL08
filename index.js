@@ -23,6 +23,7 @@ class BankBranch {
 const branchA = new BankBranch({ name: "Moneybagsbank", address: "437 cash road" });
 const branchB = new BankBranch({ name: "NotARealBank", address: "344 dipper road" });
 
+//!Testing Solution
 console.log(branchA.getBranchInfo()); // Output: { name: 'Main Branch', address: '123 Main St' }
 console.log(branchB.getBranchInfo()); // Output: { name: 'Main Branch', address: '123 Main St' }
 
